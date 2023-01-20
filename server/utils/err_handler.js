@@ -1,5 +1,5 @@
 const AppError = require("../utils/app_error");
-
+require("dotenv").config();
 // MONGOOSE ERRORS:
 const handleCastErrDB = (err) => {
   console.log("CAST ERROR");
