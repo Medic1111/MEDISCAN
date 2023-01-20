@@ -23,9 +23,18 @@ const userSchema = new mongoose.Schema({
     maxLength: [30, "Name cannot exceed 30 characters"],
     select: false,
   },
-  allergies: [{ type: String }],
-  medical_history: [{ type: String }],
-  medications: [{ type: String }],
+  allergies: {
+    type: Array,
+    default: [],
+  },
+  medical_history: {
+    type: Array,
+    default: [],
+  },
+  medications: {
+    type: Array,
+    default: [],
+  },
   joinedDate: {
     type: Date,
     default: new Date().toISOString(),
