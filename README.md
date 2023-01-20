@@ -38,3 +38,24 @@ In case of emergencies, EMS professionals can simply scan that card and have acc
   - Encryption and Cookies secure httpOnly
 - Email campaign:
   - Nodemailer and Sendgrid to manage communication with users
+
+## RUNNING IT
+
+- Fork/Clone this project
+- `.env` example:
+
+```
+NODE_ENV=development or production
+DB_URI=YourURI
+GRID_USERNAME=sendgridusername
+GRID_PASSWORD=sendgridpassword
+EMAIL: some@email.com
+SECRET_TOKEN=anystringofyourchoice
+```
+
+- Run `npm install` at the root to install server dependencies
+- `cd client` && `npm install` to install client dependencies
+- At the root, `npm run dev` to start the API
+- `npm run client` to start the client
+- Seed DB with `npm run seedDB`
+- Clear DB with `npm run clearDB`
