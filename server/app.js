@@ -9,6 +9,8 @@ const hpp = require("hpp");
 const morgan = require("morgan");
 const xss = require("xss-clean");
 const path = require("path");
+const AppError = require("./utils/app_error");
+const errController = require("./utils/err_handler");
 require("dotenv").config();
 const app = express();
 
@@ -21,7 +23,15 @@ app.use(hpp());
 app.use(xss());
 app.use(sanitize());
 app.use(cookieParser());
-// SET LIMIT
+process.env.NODE_ENV === "development" && app.use(morgan("dev"));
+app.use(
+  "/api",
+  limiter({
+    max: 100,
+    window: 60 * 60 * 1000,
+    message: "Too many calls from this IP",
+  })
+);
 
 // UNHANDLED/ UNIVERSAL
 
@@ -31,15 +41,13 @@ if (process.env.NODE_ENV === "production") {
   });
 } else {
   app.all("*", (req, res, next) => {
-    next(/*createerrorhandler*/);
+    next(new AppError(`${req.originalUrl} not supported`));
   });
 }
 
 // ERR HANDLER
 
-app.use((err, req, res, next) => {
-  console.log(err);
-});
+app.use(errController);
 
 // EXPORT
 
