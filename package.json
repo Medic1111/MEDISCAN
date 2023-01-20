@@ -8,7 +8,8 @@
     "dev": "nodemon server/index.js",
     "build": "cd client && npm install && npm start",
     "seedDB": "node server/db/micro.js --seed",
-    "clearDB": "node server/db/micro.js --clear"
+    "clearDB": "node server/db/micro.js --clear",
+    "client": "cd client && npm start"
   },
   "author": "Aryse <medictansy@gmail.com>",
   "license": "MIT",
