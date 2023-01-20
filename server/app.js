@@ -33,8 +33,13 @@ app.use(
   })
 );
 
-// UNHANDLED/ UNIVERSAL
+// ROUTES
+const authRouter = require("./routes/auth");
 
+// CONTROL/MIDDLEWARE
+app.use("/api/v1/auth", authRouter);
+
+// UNHANDLED/ UNIVERSAL
 if (process.env.NODE_ENV === "production") {
   app.all("*", (req, res, next) => {
     res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
@@ -46,9 +51,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // ERR HANDLER
-
 app.use(errController);
 
 // EXPORT
-
 module.exports = app;
