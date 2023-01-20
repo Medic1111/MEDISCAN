@@ -11,7 +11,7 @@ const connection = async () => {
 };
 
 const mockClient = {
-  name: "Mock Client",
+  username: "Mock Client",
   email: "mockclient@mock.com",
   password: "mockclient",
   allergies: ["pollen"],
@@ -37,5 +37,5 @@ const clearDB = async () => {
   process.exit();
 };
 
-if (process.argv[2] === "-seed") return seedDB();
-if (process.argv[2] === "-clear") return clearDB();
+if (process.argv[2] === "--seed") return seedDB();
+if (process.argv[2] === "--clear") return clearDB();
