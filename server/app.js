@@ -35,9 +35,10 @@ app.use(
 
 // ROUTES
 const authRouter = require("./routes/auth");
-
+const userRouter = require("./routes/user");
 // CONTROL/MIDDLEWARE
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/user", userRouter);
 
 // UNHANDLED/ UNIVERSAL
 if (process.env.NODE_ENV === "production") {
