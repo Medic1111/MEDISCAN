@@ -1,0 +1,2 @@
+GET http://localhost:3002/api/v1/user/63cbdc062e080973f51245d5 HTTP/1.1
+Content-Type: application/json
