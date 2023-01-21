@@ -24,8 +24,8 @@ const register = handleAsync(async (req, res, next) => {
   await sendEmail({
     email: req.body.email,
     subject: "Welcome to your virtual chart",
-    text: `Welcome ${user.username}! Its a pleasure to assist you when time matters them most `,
-    html: `Welcome ${user.username}! Its a pleasure to assist you when time matters them most`,
+    text: `Welcome ${req.body.username}! Its a pleasure to assist you when time matters them most `,
+    html: `Welcome ${req.body.username}! Its a pleasure to assist you when time matters them most`,
   });
   res.status(201).json(user);
 });

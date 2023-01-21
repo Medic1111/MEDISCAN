@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
-// const jwt = require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -9,12 +8,14 @@ const userSchema = new mongoose.Schema({
     required: [true, "Please enter your name"],
     minLength: [4, "Name should be at least 4 characters"],
     maxLength: [30, "Name cannot exceed 30 characters"],
+    unique: [true, "That username is already in use"],
   },
   email: {
     type: String,
     required: [true, "Please enter your email"],
     unique: [true, "Email is already in use, please use another email"],
     validate: [validator.isEmail, "Please enter a valid email"],
+    unique: [true, "That email is already in registered"],
   },
   password: {
     type: String,
@@ -50,13 +51,6 @@ userSchema.pre("save", async function (next) {
   }
   this.password = await bcrypt.hash(this.password, 10);
 });
-
-// ATTACH COOKIE UTIL DOES THAT AS MIDDLEWARE
-// userSchema.method.getJWTToken = function () {
-//   return jwt.sign({ id: this.id }, process.env.TOKEN_SECRET, {
-//     expiresIn: process.env.TOKEN_EXPIRE,
-//   });
-// };
 
 userSchema.methods.decrypt = async function (canditate, storedPassword) {
   return await bcrypt.compare(canditate, storedPassword);
