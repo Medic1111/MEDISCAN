@@ -11,6 +11,7 @@ import Register from "./components/Auth/register";
 import Protect from "./components/Protect/Protect";
 import User from "./components/User/User";
 import Scan from "./components/Scan/Scan";
+import QRCode from "./components/QRCode/QRCode";
 
 function App() {
   return (

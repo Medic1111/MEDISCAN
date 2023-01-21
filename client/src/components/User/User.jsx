@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { authCtx } from "../../features/auth-ctx";
+import QRCode from "../QRCode/QRCode";
 import classes from "./User.module.css";
 
 const User = () => {
@@ -29,6 +30,8 @@ const User = () => {
           return <p>{el}</p>;
         })}
       </li>
+      <p>Your QR</p>
+      <QRCode url={authMgr.currentUser._id} />
     </section>
   );
 };

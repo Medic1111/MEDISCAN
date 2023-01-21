@@ -15,6 +15,7 @@ const Protect = ({ children }) => {
       })
       .catch((err) => {
         authMgr.setIsAuth(false);
+        authMgr.setCurrentUser({});
         nav("/");
       });
   };
