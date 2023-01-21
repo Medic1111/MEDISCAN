@@ -36,6 +36,11 @@ const Navbar = () => {
           )}
           {authMgr.isAuth && (
             <li>
+              <Link to={`/users/${authMgr.currentUser._id}`}>Account</Link>
+            </li>
+          )}
+          {authMgr.isAuth && (
+            <li>
               <Link onClick={logoutHandler} to="/">
                 Logout
               </Link>
