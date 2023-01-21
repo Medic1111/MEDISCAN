@@ -1,7 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { authCtx } from "../../features/auth-ctx";
 import Metadata from "../layout/Metadata";
 
 const Disclaimer = () => {
+  const authMgr = useContext(authCtx);
+  const nav = useNavigate();
   return (
     <Fragment>
       <Metadata title={`Disclaimer`} />
@@ -22,7 +26,10 @@ const Disclaimer = () => {
             to sharing information you provided with anyone who has access to
             this platform.
           </p>
-          <button>I give consent</button>
+          ;
+          <button onClick={() => nav(`/users/${authMgr.currentUser._id}`)}>
+            I give consent
+          </button>
         </div>
       </div>
     </Fragment>

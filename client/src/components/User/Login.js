@@ -17,7 +17,7 @@ const LoginSignup = () => {
       .then((response) => {
         authMgr.setCurrentUser(response.data);
         authMgr.setIsAuth(true);
-        nav("/disclaimer");
+        nav(`/users/${authMgr.currentUser._id}`);
       })
       .catch((error) => {
         console.log(error.response.data);
