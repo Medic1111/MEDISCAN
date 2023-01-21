@@ -1,7 +1,6 @@
 const User = require("../models/user");
 const handleAsync = require("../utils/handle_async");
 const AppError = require("../utils/app_error");
-const { findByIdAndUpdate } = require("../models/user");
 const jwt = require("jsonwebtoken");
 
 const getUser = handleAsync(async (req, res, next) => {
