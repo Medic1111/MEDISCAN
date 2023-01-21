@@ -64,7 +64,7 @@ const Register = () => {
             />
           </label>
           <br />
-          <button type="submit">Login</button>
+          <button type="submit">Register</button>
           {error && <p>{error}</p>}
           <p style={{ cursor: "pointer" }} onClick={() => nav("/login")}>
             Already have an account? Login

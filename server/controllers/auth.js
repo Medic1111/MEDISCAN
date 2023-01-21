@@ -41,7 +41,7 @@ const logout = (req, res, next) => {
 };
 
 const validate = handleAsync(async (req, res, next) => {
-  let token = req.cookie.jwt || req.headers.authorization.slice(7);
+  let token = req.cookies.jwt;
   if (!token) return next(new AppError("No token provided", 401));
   jwt.verify(token, process.env.TOKEN_SECRET, async (err, tokenSpec) => {
     if (err) return next(new AppError("Invalid or Expired Token", 401));
