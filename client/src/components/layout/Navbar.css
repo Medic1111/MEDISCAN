@@ -1,0 +1,36 @@
+nav {
+  display: flex;
+  align-items: center;
+  background-color: #39375B;
+  color: #D6CDDC !important;
+  padding: 10px;
+}
+
+.logo-image {
+  height: 50px;
+}
+
+.nav-left {
+  flex: 1;
+}
+
+.nav-right {
+  flex: 1;
+  text-align: right;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+a {
+  color: #D6CDDC;
+  text-decoration: none;
+}
