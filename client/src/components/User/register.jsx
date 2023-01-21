@@ -1,9 +1,9 @@
 import React, { useState, Fragment } from "react";
 import "./Login.css";
-import axios from 'axios';
+import axios from "axios";
 
 const Register = () => {
-    const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -11,7 +11,7 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("/api/v1/auth/register", { email,username, password })
+      .post("/api/v1/auth/register", { email, username, password })
       .then((response) => {
         // handle successful login
         console.log(response.data);
@@ -26,9 +26,9 @@ const Register = () => {
   return (
     <Fragment>
       <div class="signup-form">
-        <h2>Log in</h2>
+        <h2>Register </h2>
         <form onSubmit={handleSubmit}>
-            <label>
+          <label>
             Email:
             <input
               type="text"
@@ -38,7 +38,7 @@ const Register = () => {
               required
             />
           </label>
-          <br/>
+          <br />
           <label>
             Username:
             <input
@@ -69,4 +69,4 @@ const Register = () => {
   );
 };
 
-export default  Register;
+export default Register;
