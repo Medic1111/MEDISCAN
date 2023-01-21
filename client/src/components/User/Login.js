@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import "./Login.css";
-import axios from 'axios';
+import axios from "axios";
 
 const LoginSignup = () => {
   const [username, setUsername] = useState("");
@@ -10,7 +10,7 @@ const LoginSignup = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("/api/auth/login", { username, password })
+      .post("/api/v1/auth/login", { username, password })
       .then((response) => {
         // handle successful login
         console.log(response.data);
