@@ -15,14 +15,11 @@ require("dotenv").config();
 const app = express();
 
 // MIDDLEWARE
-app.use(cors({ origin: "*" }));
-app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 app.use(helmet());
 app.use(hpp());
 app.use(xss());
 app.use(sanitize());
-app.use(cookieParser());
 process.env.NODE_ENV === "development" && app.use(morgan("dev"));
 app.use(
   "/api",
@@ -32,6 +29,9 @@ app.use(
     message: "Too many calls from this IP",
   })
 );
+app.use(cors({ origin: "*" }));
+app.use(express.json({ limit: "10kb" }));
+app.use(cookieParser());
 
 // ROUTES
 const authRouter = require("./routes/auth");
