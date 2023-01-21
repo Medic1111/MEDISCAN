@@ -1,12 +1,13 @@
 import React, { useState, Fragment } from "react";
 import "./Login.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginSignup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  const nav = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
@@ -14,6 +15,7 @@ const LoginSignup = () => {
       .then((response) => {
         // handle successful login
         console.log(response.data);
+        nav("/disclaimer");
       })
       .catch((error) => {
         // handle login error

@@ -1,12 +1,14 @@
 import React, { useState, Fragment } from "react";
 import "./Login.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const nav = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,6 +16,7 @@ const Register = () => {
       .post("/api/v1/auth/register", { email, username, password })
       .then((response) => {
         // handle successful login
+        nav("/disclaimer");
         console.log(response.data);
       })
       .catch((error) => {
