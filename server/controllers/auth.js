@@ -2,6 +2,7 @@ const User = require("../models/user");
 const AppError = require("../utils/app_error");
 const handleAsync = require("../utils/handle_async");
 const jwt = require("jsonwebtoken");
+const sendEmail = require("../utils/send_email");
 
 const login = handleAsync(async (req, res, next) => {
   const user = await User.findOne({ username: req.body.username }).select(
@@ -20,6 +21,12 @@ const login = handleAsync(async (req, res, next) => {
 const register = handleAsync(async (req, res, next) => {
   const user = await User.create(req.body);
   user.password = null;
+  await sendEmail({
+    email: req.body.email,
+    subject: "Welcome to your virtual chart",
+    text: `Welcome ${user.username}! Its a pleasure to assist you when time matters them most `,
+    html: `Welcome ${user.username}! Its a pleasure to assist you when time matters them most`,
+  });
   res.status(201).json(user);
 });
 
