@@ -10,9 +10,29 @@ const About = () => {
         <div className="aboutContainer">
           <h1 className="aboutHeading">About Us</h1>
           <p>
-            <span>Our name</span> is a web based application.
-            <br />
-            Write up here!
+            <span>
+              {" "}
+              Mediscans is a web based application.
+              <br />
+              EMS providers rely on information about their patients in order to
+              develop and implement care It is not uncommon though, for these
+              professionals to face situations where the patient is unable to
+              communicate, in which case, they need to look around for clues
+              that could indicate patient's health status.
+            </span>
+          </p>
+          <p>
+            <span>
+              {" "}
+              E-chart resolves this problem. The patient signs up to the
+              platform and creates a profile, which they will add, after HIPAA
+              disclaimers, basic information required in every Patient Chart.
+              The patient then receives a QR Code and a wallet card with this QR
+              Code printed. In case of emergencies, EMS professionals can simply
+              scan that card and have access to information such as allergies,
+              medications, and past medical history, decreasing On-Scene time,
+              and increasing the rate at which appropriate care is rendered.
+            </span>
           </p>
           <div>
             <span>Made with ❤️</span>

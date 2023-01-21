@@ -53,6 +53,9 @@ const LoginSignup = () => {
           <br />
           <button type="submit">Login</button>
           {error && <p>{error}</p>}
+          <p style={{ cursor: "pointer" }} onClick={() => nav("/signup")}>
+            Dont have an account? Sign up
+          </p>
         </form>
       </div>
     </Fragment>
