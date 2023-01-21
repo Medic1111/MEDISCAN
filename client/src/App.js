@@ -3,12 +3,14 @@ import React, { Fragment } from "react";
 import Navbar from "./components/layout/Navbar.js";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-import Login from "./components/User/Login";
+import Login from "./components/Auth/Login";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Disclaimer from "./components/Home/Disclaimer";
-import Register from "./components/User/register";
+import Register from "./components/Auth/register";
 import Protect from "./components/Protect/Protect";
+import User from "./components/User/User";
+import Scan from "./components/Scan/Scan";
 
 function App() {
   return (
@@ -34,10 +36,11 @@ function App() {
             path="/users/:id"
             element={
               <Protect>
-                <h1>USER's PAGE</h1>
+                <User />
               </Protect>
             }
           />
+          <Route exact path="/scan/:id" element={<Scan />} />
           <Route path="*" element={<Home />} replace />
         </Routes>
       </Router>

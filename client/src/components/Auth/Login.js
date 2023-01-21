@@ -10,6 +10,7 @@ const LoginSignup = () => {
   const [error, setError] = useState("");
   const nav = useNavigate();
   const authMgr = useContext(authCtx);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
@@ -17,7 +18,7 @@ const LoginSignup = () => {
       .then((response) => {
         authMgr.setCurrentUser(response.data);
         authMgr.setIsAuth(true);
-        nav(`/users/${authMgr.currentUser._id}`);
+        nav(`/users/${response.data._id}`);
       })
       .catch((error) => {
         console.log(error.response.data);
