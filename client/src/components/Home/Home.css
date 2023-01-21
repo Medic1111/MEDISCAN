@@ -1,0 +1,22 @@
+.home-page-content {
+  display: flex;
+  align-items: center;
+}
+
+.image-container {
+  width: 40%;
+}
+
+.text-container {
+  width: 60%;
+  padding: 30px;
+}
+
+.read {
+  color: #39375B !important;
+  text-decoration: underline;
+}
+
+body {
+  background-color: #D6CDDC !important;
+}
