@@ -1,13 +1,11 @@
 import React, { Fragment, useContext, useEffect } from "react";
 import "./Home.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import image from "../../images/logo.png";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { authCtx } from "../../features/auth-ctx";
 
 const Home = () => {
-  const nav = useNavigate();
   const authMgr = useContext(authCtx);
   const validateCookie = async () => {
     await axios
@@ -18,7 +16,6 @@ const Home = () => {
       })
       .catch((err) => {
         authMgr.setIsAuth(false);
-        nav("/");
       });
   };
 
@@ -38,13 +35,13 @@ const Home = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
               viverra euismod odio, gravida pellentesque urna varius vitae.
             </p>
-            <Link to="/disclaimer">
+            {/* <Link to="/disclaimer">
               <strong>
                 <a className="read">
                   Please read HIPPA details and disclaimer.
                 </a>
               </strong>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
