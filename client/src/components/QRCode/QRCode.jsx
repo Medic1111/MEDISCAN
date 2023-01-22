@@ -1,5 +1,6 @@
 import { QRCodeCanvas } from "qrcode.react";
 import classes from "./QRCode.module.css";
+import "./QRCode.css";
 
 const QRCode = ({ url }) => {
   const printHandler = () => {
@@ -19,9 +20,11 @@ const QRCode = ({ url }) => {
   return (
     <div className={classes.div}>
       {codeTag}
-      <button onClick={printHandler} className={classes.btn}>
-        Print
-      </button>
+      <div style={{marginLeft: "50px", marginTop: "20px"}}>
+        <button onClick={printHandler} className="print-btn">
+          Print
+        </button>
+      </div>
     </div>
   );
 };

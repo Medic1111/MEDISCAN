@@ -12,7 +12,7 @@ const About = () => {
           <p>
             <span>
               {" "}
-              Mediscans is a web based application.
+              <strong>Mediscans</strong> is a web based application.
               <br />
               EMS providers rely on information about their patients in order to
               develop and implement care It is not uncommon though, for these
@@ -34,7 +34,7 @@ const About = () => {
               and increasing the rate at which appropriate care is rendered.
             </span>
           </p>
-          <div>
+          <div style={{margin: "70px"}}>
             <span>Made with ❤️</span>
           </div>
         </div>
