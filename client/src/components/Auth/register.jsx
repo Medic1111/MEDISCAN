@@ -34,7 +34,7 @@ const Register = () => {
           <label>
             Email:
             <input
-              type="text"
+              type="email"
               name="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

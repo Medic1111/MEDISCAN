@@ -45,7 +45,7 @@ const MedicalForm = () => {
 
   return (
     <React.Fragment>
-      <form onSubmit={handleSubmit}>
+      <form style={{ marginTop: "100px" }} onSubmit={handleSubmit}>
         <input
           onChange={(e) => setAllergy(e.target.value)}
           value={allergy}
@@ -71,7 +71,9 @@ const MedicalForm = () => {
         <span onClick={() => setMedicalHistory((prev) => [...prev, history])}>
           +
         </span>
-        <input type={"submit"} />
+        <div>
+          <button type="submit">Submit</button>
+        </div>
       </form>
       {allergies.map((el, index) => {
         return (

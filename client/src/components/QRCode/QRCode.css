@@ -1,0 +1,16 @@
+.print-btn {
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  border-radius: 9px;
+  font-family: Arial;
+  color: #d6cddc;
+  font-size: 20px;
+  background: #39375b;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.print-btn:hover {
+  text-decoration: none;
+}
