@@ -11,7 +11,7 @@ import Register from "./components/Auth/register";
 import Protect from "./components/Protect/Protect";
 import User from "./components/User/User";
 import Scan from "./components/Scan/Scan";
-import QRCode from "./components/QRCode/QRCode";
+import MedicalForm from "./components/MedicalForm/MedicalForm";
 
 function App() {
   return (
@@ -32,6 +32,15 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Register />} />
           <Route exact path="/about" element={<About />} />
+          <Route
+            exact
+            path="/medical/form"
+            element={
+              <Protect>
+                <MedicalForm />
+              </Protect>
+            }
+          />
           <Route
             exact
             path="/users/:id"

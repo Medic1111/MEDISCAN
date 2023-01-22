@@ -26,10 +26,7 @@ const Disclaimer = () => {
             to sharing information you provided with anyone who has access to
             this platform.
           </p>
-          ;
-          <button onClick={() => nav(`/users/${authMgr.currentUser._id}`)}>
-            I give consent
-          </button>
+          ;<button onClick={() => nav(`/medical/form`)}>I give consent</button>
         </div>
       </div>
     </Fragment>

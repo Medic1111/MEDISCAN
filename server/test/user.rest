@@ -3,10 +3,12 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:3002/api/v1/user/63cbefbf11665e0ad9e29065 HTTP/1.1
+PATCH http://localhost:3002/api/v1/user/63cc27857b3304d0f7183f17 HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZpcnN0dXNlcjIyIiwiaWF0IjoxNjc0MzIzMzE1LCJleHAiOjE2NzQzMjY5MTV9.GdIdByrCJAxd_pXRa2Zw7b6d-alMSOfJj6-CBvOBU64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1lZGljMTExMSIsImlhdCI6MTY3NDMzMzE5MSwiZXhwIjoxNjc0MzM2NzkxfQ.1usTR9k_4HSQRhYmXqEqir5WwUEHIsWj8jCiLZew47E
 
 {
-  "allergies": ["none"]
+  "allergies": ["Pollen"],
+  "medications": ["Vitamins"],
+  "medical_history": ["Asthma"]
 }
