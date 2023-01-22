@@ -10,7 +10,7 @@ const getUser = handleAsync(async (req, res, next) => {
 });
 
 const patchUser = handleAsync(async (req, res, next) => {
-  let token = req.cookie.jwt || req.headers.authorization.slice(7);
+  let token = req.cookies.jwt || req.headers.authorization.slice(7);
   if (!token) return next(new AppError("No token provided", 401));
   jwt.verify(token, process.env.TOKEN_SECRET, async (err, tokenSpec) => {
     if (err) return next(new AppError("Invalid or Expired Token", 401));
